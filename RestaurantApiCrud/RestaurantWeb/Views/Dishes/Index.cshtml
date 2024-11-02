@@ -1,0 +1,27 @@
+﻿@model IEnumerable<RestaurantApi.Models.Dish>
+
+<h1 class="mb-4 text-center">Dish List</h1>
+
+<a asp-action="Create" class="btn btn-success mb-3">Create New Dish</a>
+
+<table class="table table-striped">
+    <thead class="table-light">
+        <tr>
+            <th>Dish ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dish in Model)
+        {
+            <tr>
+                <td>@dish.DishId</td>
+                <td>@dish.Name</td>
+                <td>@dish.Description</td>
+                <td>@dish.Price.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
